@@ -1,0 +1,37 @@
+This document explains in part what this project entails and the brief explanation of
+how it would look, from the back that is.
+
+Database
+Users Table
+
+id -------------------- This would be the users unique ID.
+First Name ------------ This doesn't need to be unique.
+Last Name ------------- Also doesn't need to be unique, but very essential.
+Email ----------------- Definitely unique and essential.
+Signature ------------- This is one of the most-important parts:
+                        It specifies how the users emails are perceived on the
+                        receiving end and once the other user views the mail,
+                        it verifies if the signature matches a present Signature
+                        Signatures are auto-generated hashes that links each
+                        account with another account. Your signature can be
+                        altered and refreshed throughout the database, once in a
+                        month and only when compromise is detected.
+
+
+Emails Table
+
+Senders ID ----------- The ID of the Sender
+Receivers ID --------- The ID of the Receiver
+Senders Signature ---- Signature of the Sender
+Receivers Signature -- Signature of the Receiver; Left blank if this is the
+                        first email being sent - Defaults to (0x16) repr.
+Email Heading -------- Normal email header (text)
+Email Subject -------- Email Subject (text)
+Email Body ----------- Email Body (text)
+
+
+Email Attachments --- For now, we wouldn't build this to support attachments for
+                      specific reasons, Может быт поже!
+
+
+Other attributes would be added to the project as time progresses.

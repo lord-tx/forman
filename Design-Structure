@@ -1,6 +1,8 @@
 This document explains in part what this project entails and the brief explanation of
 how it would look, from the back that is.
 
+This is prototypical and not for production or professional purposes.
+
 Database
 Users Table
 
@@ -22,8 +24,8 @@ Signature ------------- This is one of the most-important parts:
 
 Emails Table
 
-Senders ID ----------- The ID of the Sender
-Receivers ID --------- The ID of the Receiver
+Senders ID ----------- The ID of the Sender (Email)
+Receivers ID --------- The ID of the Receiver (Email)
 Senders Signature ---- Signature of the Sender
 Receivers Signature -- Signature of the Receiver; Left blank if this is the
                         first email being sent - Defaults to (0x16) represent.

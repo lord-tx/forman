@@ -96,14 +96,23 @@
                 }
                 else
                 {
-                    mysqli_query($con ,"INSERT INTO forman_users(firstname,lastname,email,password,signature) VALUES('$fname','$lname','$email','$password','$signature')");
-                    echo "You have registered successfully! <a href='login.php'>Login Now!</a>";
+                    # A little aautomatic message (hardcoded for now) to populate the inbox.
+                    $message = "We Officially welcome you to the Forman family of Almost Total security. We are still working on a lot of things to make this great!";
+                    $subject = "WELCOME TO F0RMAN";
+                    $for_man = "AxxErEpUBLIC000";
+                    $official = "F0RMAN";
+
+                    $query_one = "INSERT INTO forman_users(firstname,lastname,email,password,signature) VALUES('$fname','$lname','$email','$password','$signature')";
+                    $query_two = "INSERT INTO forman_email(email,subject,signature,body,rec_sig,from_email) VALUES ('$email', '$subject', '$for_man', '$message', '$signature', '$official')";
+
+                    mysqli_query($con, $query_one);
+                    mysqli_query($con, $query_two);
+
+                    echo "<p> You have registered successfully!";
+                    header("Refresh:2; url=login.php");
+
                 }
 
-            }
-            else
-            {
-                echo ("Wrong Match");
             }
         }
     }
